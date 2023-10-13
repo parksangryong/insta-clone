@@ -1,0 +1,17 @@
+export const FriendProfiledata = [
+    {name: 'black', accountName: 'myCat', profileImage: require('../homes/images/p1.jpg'), posts: 30, followers: 31, following: 44, follow: false},
+    {name: 'cheeze', accountName: 'CheezeCat', profileImage: require('../homes/images/p2.jpg'), posts: 24, followers: 120, following: 600, follow: false},
+    {name: 'check', accountName: 'CheckCat', profileImage: require('../homes/images/p3.jpg'), posts: 21, followers: 78, following: 123, follow: false},
+    {name: 'fome', accountName: 'Fomeranian', profileImage: require('../homes/images/p4.jpg'), posts: 130, followers: 63452, following: 33, follow: false},
+    {name: 'white&snow', accountName: 'White&Snow', profileImage: require('../homes/images/p5.jpg'), posts: 56, followers: 401, following: 300, follow: false},
+    {name: 'bird', accountName: 'Bird', profileImage: require('../homes/images/p6.jpg'), posts: 412, followers: 41239, following: 3500, follow: false},
+    {name: 'handbird', accountName: 'HandBird', profileImage: require('../homes/images/p7.jpg'), posts: 60, followers: 91, following: 64, follow: false},
+    {name: 'chicken', accountName: 'Chicken', profileImage: require('../homes/images/p8.jpg'), posts: 76, followers: 131, following: 11, follow: false},
+    {name: 'beerchicken', accountName: 'BeerChick', profileImage: require('../homes/images/p9.jpg'), posts: 391, followers: 89742, following: 54136, follow: false},
+    {name: 'pizza', accountName: 'PizzaHot', profileImage: require('../homes/images/p10.jpg'), posts: 550, followers: 198000, following: 15351, follow: false},
+    {name: 'Italia', accountName: 'Colosseo', profileImage: require('../homes/images/p11.jpg'), posts: 10, followers: 100, following: 10, follow: false},
+    {name: 'prenche', accountName: 'Prenche', profileImage: require('../homes/images/p12.jpg'), posts: 38, followers: 3980, following: 3541, follow: false},
+    {name: 'rome', accountName: 'Rome', profileImage: require('../homes/images/p13.jpg'), posts: 1200, followers: 135000, following: 565, follow: false},
+    {name: 'tokyo', accountName: 'TokyoTower', profileImage: require('../homes/images/p14.jpg'), posts: 88, followers: 180, following: 77, follow: false},
+    {name: 'bono', accountName: 'BonoBono', profileImage: require('../homes/images/p15.jpg'), posts: 2890, followers: 501689, following: 286100, follow: false},
+]
