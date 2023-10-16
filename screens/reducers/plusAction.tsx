@@ -1,11 +1,10 @@
 //actions
-const PLUS_RESULT = "Like&Msg";
+const PLUS_RESULT = 'changeImg';
 
 //action creators
-export const instaPlus = (like : number, msg : string) => {
-    return {
-        type: PLUS_RESULT,
-        like,
-        msg
-    }
-}
+export const instaPlus = (imgs: number) => {
+  return {
+    type: PLUS_RESULT,
+    imgs,
+  };
+};

@@ -1,16 +1,14 @@
 const initState = {
-    like: 11,
-    msg : 'hello'
-}
+  imgs: 20,
+};
 
 //reducer
 
-export default function PlusReducers(state = initState, action : any){
-    switch (action.type){
-        case 'Like&Msg' :
-            return {...state, like: state.like+1, msg: action.msg};
-        default : 
-            return state;
-    }
-    
+export default function PlusReducers(state = initState, action: any) {
+  switch (action.type) {
+    case 'changeImg':
+      return {...state, imgs: state.imgs};
+    default:
+      return state;
+  }
 }

@@ -9,7 +9,6 @@ import {
   TouchableOpacity,
   FlatList,
   StatusBar,
-  Modal,
 } from 'react-native';
 import ProfileBody from './profile/ProfileBody';
 import ProfileButton from './profile/ProfileButton';
@@ -20,10 +19,11 @@ import {
   faHeart,
   faLocationArrow,
   faPlus,
-  faUser,
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
+import {useSelector} from 'react-redux';
+import {RootState} from './reducers/store';
 
 const Profile = () => {
   let circles = [];
@@ -33,7 +33,12 @@ const Profile = () => {
   const [like, setLike] = useState(true);
   const [mark, setMark] = useState(false);
 
+  // const [imgs, setImgs] = useState(
+  //   useSelector((state: RootState) => state.PlusReducers.imgs),
+  // );
+
   useEffect(() => {
+    //console.log(imgs);
     //console.log(alist.length);
     const getData = async () => {
       try {
@@ -262,7 +267,7 @@ const Profile = () => {
             <FontAwesomeIcon icon={faLocationArrow} size={26} />
             <TouchableOpacity onPress={() => setMark(!mark)}>
               {mark ? (
-                <FontAwesomeIcon icon={faBookmark} size={22} color="blue" />
+                <FontAwesomeIcon icon={faBookmark} size={22} color="navy" />
               ) : (
                 <FontAwesomeIcon icon={faBookmark} size={22} />
               )}

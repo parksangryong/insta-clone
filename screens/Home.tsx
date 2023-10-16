@@ -14,9 +14,6 @@ import {
 
 import Stories from './homes/Stories';
 import Posts from './homes/Posts';
-import {useSelector, useDispatch} from 'react-redux';
-import {RootState} from './reducers/store';
-import {instaPlus} from './reducers/plusAction';
 
 const Styles = StyleSheet.create({
   insta: {
@@ -40,13 +37,6 @@ const Styles = StyleSheet.create({
 });
 
 const Home = () => {
-  // const dispatch = useDispatch();
-  // const id = useSelector((state: RootState) => state.LoginReducers.id);
-  // const like = useSelector((state: RootState) => state.PlusReducers.like);
-  // console.log(id, like);
-  // dispatch(instaPlus(10, 'bye'));
-  // redux 연습 한거임
-
   return (
     <SafeAreaView>
       <StatusBar backgroundColor="white" barStyle="dark-content" />

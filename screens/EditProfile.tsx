@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -6,7 +6,6 @@ import {
   SafeAreaView,
   Image,
   TextInput,
-  Button,
 } from 'react-native';
 import {StyleSheet} from 'react-native';
 
@@ -19,6 +18,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {useDispatch, useSelector} from 'react-redux';
+import {Picker} from '@react-native-picker/picker';
+import {RootState} from './reducers/store';
+import {instaPlus} from './reducers/plusAction';
 
 export type StatusProps = NativeStackScreenProps<
   RootStackParamList,
@@ -28,6 +31,11 @@ export type StatusProps = NativeStackScreenProps<
 const EditProfile = ({route, navigation}: StatusProps) => {
   const {name, accountName, profileImage} = route.params;
   const navi = useNavigation<NativeStackNavigationProp<any>>();
+
+  // const dispatch = useDispatch();
+  // const [imgs, setImgs] = useState(
+  //   useSelector((state: RootState) => state.PlusReducers.imgs),
+  // );
 
   const styles = StyleSheet.create({
     safeview: {width: '100%', backgroundColor: 'white'},
@@ -62,7 +70,10 @@ const EditProfile = ({route, navigation}: StatusProps) => {
           <Text>취소</Text>
         </TouchableOpacity>
         <Text style={styles.modifyText}>프로필 수정</Text>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.goBack();
+          }}>
           <Text style={styles.completeText}>완료</Text>
         </TouchableOpacity>
       </View>
