@@ -79,7 +79,7 @@ const PostItem = ({data}: any) => {
             {like ? (
               <FontAwesomeIcon
                 icon={faHeart}
-                color="red"
+                color="deeppink"
                 size={20}
                 style={styles.fonts}
               />

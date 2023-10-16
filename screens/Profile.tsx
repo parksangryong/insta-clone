@@ -15,6 +15,7 @@ import ProfileBody from './profile/ProfileBody';
 import ProfileButton from './profile/ProfileButton';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
+  faBookmark,
   faComment,
   faHeart,
   faLocationArrow,
@@ -30,6 +31,7 @@ const Profile = () => {
   const [alist, setAlist] = useState([]);
 
   const [like, setLike] = useState(true);
+  const [mark, setMark] = useState(false);
 
   useEffect(() => {
     //console.log(alist.length);
@@ -258,6 +260,13 @@ const Profile = () => {
             </TouchableOpacity>
             <FontAwesomeIcon icon={faComment} size={26} />
             <FontAwesomeIcon icon={faLocationArrow} size={26} />
+            <TouchableOpacity onPress={() => setMark(!mark)}>
+              {mark ? (
+                <FontAwesomeIcon icon={faBookmark} size={22} color="blue" />
+              ) : (
+                <FontAwesomeIcon icon={faBookmark} size={22} />
+              )}
+            </TouchableOpacity>
           </View>
         </View>
       ) : (
