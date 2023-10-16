@@ -8,17 +8,28 @@ import {
   Image,
   TouchableOpacity,
   FlatList,
+  StatusBar,
+  Modal,
 } from 'react-native';
 import ProfileBody from './profile/ProfileBody';
 import ProfileButton from './profile/ProfileButton';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faHeart, faPlus, faXmark} from '@fortawesome/free-solid-svg-icons';
+import {
+  faComment,
+  faHeart,
+  faLocationArrow,
+  faPlus,
+  faUser,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 
 const Profile = () => {
   let circles = [];
   let numberOfCircles = 10;
   const [alist, setAlist] = useState([]);
+
+  const [like, setLike] = useState(true);
 
   useEffect(() => {
     //console.log(alist.length);
@@ -51,6 +62,16 @@ const Profile = () => {
       marginHorizontal: 5,
       justifyContent: 'center',
       alignItems: 'center',
+    },
+    fonts: {
+      justifyContent: 'space-around',
+      width: '96%',
+      flexDirection: 'row',
+      alignItems: 'center',
+      padding: 8,
+      backgroundColor: 'white',
+      borderBottomEndRadius: 20,
+      borderBottomStartRadius: 20,
     },
     otherview: {
       width: 60,
@@ -91,10 +112,7 @@ const Profile = () => {
     },
     openImg: {
       width: '96%',
-      height: 300,
-      borderRadius: 20,
-      borderWidth: 3,
-      borderColor: 'black',
+      height: 400,
       resizeMode: 'cover',
     },
     ooView: {
@@ -104,12 +122,30 @@ const Profile = () => {
       flexDirection: 'row',
       alignItems: 'center',
     },
-    ooText: {color: 'black', backgroundColor: 'white', borderRadius: 100},
+    ooText: {color: 'black', fontSize: 16},
     ooxView: {
-      position: 'relative',
-      zIndex: 3,
-      left: 170,
-      bottom: 285,
+      justifyContent: 'center',
+      marginRight: 15,
+    },
+    openbar: {
+      width: '96%',
+      height: 50,
+      backgroundColor: 'white',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      borderTopEndRadius: 20,
+      borderTopStartRadius: 20,
+    },
+    openbarImg: {
+      width: 35,
+      height: 35,
+      borderRadius: 100,
+      marginRight: 10,
+    },
+    openbarview: {
+      flexDirection: 'row',
+      marginLeft: 10,
+      alignItems: 'center',
     },
   });
 
@@ -193,12 +229,36 @@ const Profile = () => {
       </ScrollView> */}
       {openImg !== null ? (
         <View style={styles.openView}>
+          <StatusBar backgroundColor={'gray'} barStyle={'dark-content'} />
+          <View style={styles.openbar}>
+            <View style={styles.openbarview}>
+              <Image
+                source={require('./homes/images/post5.jpg')}
+                style={styles.openbarImg}
+              />
+              <Text style={styles.ooText}>Park</Text>
+            </View>
+
+            <TouchableOpacity
+              style={styles.ooxView}
+              onPress={() => {
+                setOpenImg(null);
+              }}>
+              <FontAwesomeIcon icon={faXmark} style={styles.ooText} size={20} />
+            </TouchableOpacity>
+          </View>
           <Image source={{uri: openImg}} style={styles.openImg} />
-          <TouchableOpacity
-            style={styles.ooxView}
-            onPress={() => setOpenImg(null)}>
-            <FontAwesomeIcon icon={faXmark} style={styles.ooText} size={20} />
-          </TouchableOpacity>
+          <View style={styles.fonts}>
+            <TouchableOpacity onPress={() => setLike(!like)}>
+              {like ? (
+                <FontAwesomeIcon icon={faHeart} size={26} color="deeppink" />
+              ) : (
+                <FontAwesomeIcon icon={faHeart} size={26} />
+              )}
+            </TouchableOpacity>
+            <FontAwesomeIcon icon={faComment} size={26} />
+            <FontAwesomeIcon icon={faLocationArrow} size={26} />
+          </View>
         </View>
       ) : (
         ''

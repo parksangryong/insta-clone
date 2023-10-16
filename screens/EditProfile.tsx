@@ -6,6 +6,7 @@ import {
   SafeAreaView,
   Image,
   TextInput,
+  Button,
 } from 'react-native';
 import {StyleSheet} from 'react-native';
 
