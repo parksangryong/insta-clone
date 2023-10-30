@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "662828214476",
+    "project_id": "hkenst-f5636",
+    "storage_bucket": "hkenst-f5636.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662828214476:android:b17f5c8b937dce2799fa69",
+        "android_client_info": {
+          "package_name": "com.hkenst"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlCyOhID_oftwzdu94a30L249R_7MaBuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
